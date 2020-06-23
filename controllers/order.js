@@ -6,7 +6,7 @@ module.exports.getAll = async (req, res) => {
     const query = {
         user : req.user.id
     };
-
+    
     // Date of start
     if (req.query.start) {
         query.date = {
@@ -25,7 +25,7 @@ module.exports.getAll = async (req, res) => {
         query.date['$lte'] = req.query.end;
     }
 
-    if (req.quert.order) {
+    if (req.query.order) {
         query.order = +req.query.order;
     }
 
@@ -52,10 +52,10 @@ module.exports.create = async (req, res) => {
 
         //  if lastOrder order not found maxOrder (count) will be 0;
         const maxOrder = lastOrder ? lastOrder.order : 0;
-
+        
         // last order + 1 it's count of the order
         const order = await new Order({
-            list: req.bodylist,
+            list: req.body.list,
             user: req.user.id,
             order: maxOrder + 1
         }).save();

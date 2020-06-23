@@ -1,7 +1,6 @@
-module.exports = {
-    MONGO_URI: 'mongodb+srv://administrator1:KWZxfSN4FGeaUYpA@cluster0-gcnlj.mongodb.net/crm',
-    jwt: 'dev-jwt'
-}
+if (process.env.NODE_ENV === 'production') {
+    module.exports = require('./keys.prod');
+} else {
+    module.exports = require('./keys.dev');
 
-// password: KWZxfSN4FGeaUYpA
-// username: administrator1  
+}
