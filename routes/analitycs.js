@@ -1,13 +1,14 @@
 const express = require('express');
 const passport = require('passport');
-const controller = require('../controllers/analitics');
+const controller = require('../controllers/analytics');
 const router = express.Router();
 
 
-// localhost:5000/api/analitycs/overview
-// localhost:5000/api/analitycs/analitics
+// localhost:5001/api/analytics/overview
+// localhost:5001/api/analytics/analytics
 
 router.get('/overview', passport.authenticate('jwt', {session: false}), controller.overview)
-router.get('/analitics', passport.authenticate('jwt', {session: false}), controller.analitics)
+router.get('/analytics', passport.authenticate('jwt', {session: false}), controller.analytics)
+console.log('router ++');
 
 module.exports = router;

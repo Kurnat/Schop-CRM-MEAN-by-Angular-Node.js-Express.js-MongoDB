@@ -90,7 +90,9 @@ module.exports.overview = async (req, res) => {
     }
 }
 
-module.exports.analitics = async (req, res) => {
+module.exports.analytics = async (req, res) => {
+console.log('constroller ++');
+
     try {
         const allOrders = await Order.find({
             user: req.user.id
