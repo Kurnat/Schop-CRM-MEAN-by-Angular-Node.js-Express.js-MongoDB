@@ -6,6 +6,7 @@
 ### Node.js
 ### Express.js
 ### MongoDB
+#### Chart.js
 
 # CRM-MEAN-stek
 Mastering of MEAN stek
